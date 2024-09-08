@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<nav class="navbar navbar-light bg-light" style="height: 80px; border-bottom: solid">
+    <div class="d-flex justify-content-start bd-highlight mb-2" style="width: 100%; height: 90%;">
+
+    <form method="POST" action="{{url_for('load_gsheets', uuid=request_uuid)}}" class="d-flex" style="margin-left: 3%; width: 100%">
+          <button class="btn btn-outline-success" type="submit" style="width: 40%">Загрузить выборку в Gsheets</button>
+    </form>
+    <form method="GET" action="{{url_for('hello')}}" class="d-flex" style="margin-left: 3%; width: 100%">
+          <button class="btn btn-outline-success" type="submit" style="width: 40%">Назад</button>
+    </form>
+    </div>
+</nav>
+<div class="d-flex justify-content-center bd-highlight mb-2" style="width: 100%; margin-top: 2%">
+     <ul class="pagination">
+          {% if previous %}
+        <li class="page-item">
+          <a class="page-link" href="?text={{text}}&area={{area}}&roles={{roles}}&page={{page - 1}}&new=False" tabindex="-1" aria-disabled="true">Пред. стр</a>
+        </li>
+          {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" tabindex="-1" aria-disabled="true">Пред. стр</a>
+        </li>
+          {% endif %}
+        {% for p in page_range %}
+          {% if p == page %}
+          <li class="page-item active"><a class="page-link">{{ p }}</a></li>
+            {% else %}
+          <li class="page-item"><a class="page-link" href="?text={{text}}&area={{area}}&roles={{roles}}&page={{p}}&new=False">{{ p }}</a></li>
+          {% endif %}
+        {% endfor %}
+          {% if next %}
+          <li class="page-item">
+
+            <a class="page-link" href="?text={{text}}&area={{area}}&roles={{roles}}&page={{page + 1}}&new=False" tabindex="-1">След. стр.</a>
+              </li>
+          {% else %}
+              <li class="page-item disabled">
+
+            <a class="page-link" href="?text={{text}}&area={{area}}&roles={{roles}}&page={{page + 1}}&new=False" tabindex="-1">След. стр.</a>
+              </li>
+          {% endif %}
+
+      </ul>
+</div>
+
+
+<table class="table table-bordered table-hover" style="margin-top: 2%; margin-left: 5%; width: 90%">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">Название</th>
+      <th scope="col">Ссылка</th>
+      <th scope="col">Город</th>
+      <th scope="col">Специальность</th>
+      <th scope="col">Мин. зарплата</th>
+      <th scope="col">Макс. зарплата</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {% for v in vacancies %}
+    <tr class="">
+      <td>{{ v.name }}</td>
+      <td><a href="{{v.url}}">{{ v.url }}</a></td>
+     <td>{{ v.city }}</td>
+      <td>{{ v.professional_role }}</td>
+     <td>{{ v.min_salary }}</td>
+      <td>{{ v.max_salary }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+</body>
