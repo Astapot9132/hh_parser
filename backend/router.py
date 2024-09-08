@@ -61,7 +61,13 @@ async def load_roles(request: Request):
 
 @router.post('/load_gsheets/{uuid:str}')
 async def load_gsheets(uuid: str):
-    """ Post запрос для загрузки данных в google sheets """
+    """
+    Post запрос для загрузки данных в google sheets
+    Поскольку теперь в БД записи добавляются ассинхронно, то при отправке в gsheets
+    они не отсортированы по зп, надо разделить столбики зп и валюты,
+    но тогда как сравнивать где меньше, а где больше, а если
+    добавлять в отсортированном порядке, то страдает скорость добавления в бд (next_step)
+    """
     start = datetime.datetime.now()
     client = pygsheets.authorize(service_account_file="credentials.json")
     spreadsheet_id = PGSHEETS_ID
