@@ -86,109 +86,109 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
     В случае если будут найдены вакансии, они добавятся в БД
 
      """
-    # try:
-    url = 'https://api.hh.ru/vacancies'
-    #Формирование параметров запросов на ххру
-    params = {
-        'text': text,
-        'page': page,
-        'per_page': 100,
-        'period': 2,
-        'order_by': 'salary_asc',
-        'only_with_salary': 'true',
-    }
-    if area:
-        city_task = asyncio.create_task(CityRepository.city_get_id_by_name(area.lower()))
-    if roles:
-        role_task = asyncio.create_task(RolesRepository.role_get_id_by_name(roles.lower()))
-    if area:
-        city = await city_task
-        if city:
-            params.update({'area': city})
-    if roles:
-        role = await role_task
-        if role:
-            params.update({'professional_role': role})
-    async with httpx.AsyncClient() as client:
-        result = await client.get(url, params=params)
-
-    # pprint(result.json())
-
-    #Пагинация
-    pages_count = result.json()['pages'] - 1
-    page_range = list(filter(lambda x: 0 <= x <= pages_count, list(range(int(page) - 3, int(page) + 4))))
-    previous = True if int(page) > 0 else False
-    next = True if int(page) < pages_count else False
-    now = datetime.datetime.now().replace(microsecond=0)
-    request_uuid = uuid.uuid4()
-
-    #Формирование таблицы
-    vacancies = []
-    for v in result.json()['items']:
-        vacancies.append({'name': v['name'],
-                          'url': v['alternate_url'],
-                          'city': v['area']['name'],
-                          'professional_role': ', '.join([role['name'] for role in v['professional_roles']]),
-                          'min_salary': f"{v['salary']['from']} {v['salary']['currency']}",
-                          'max_salary': f"{v['salary']['to']} {v['salary']['currency']}",
-                          'created_at': now,
-                          'request_uuid': request_uuid
-                          })
-
-    #Добавление в БД
-    if vacancies and new:
-        # print('Добавляем в БД')
-        start = datetime.datetime.now()
-        vacancies_for_bd = vacancies.copy()
-        # print(result.json()['pages'])
-
-
-
-        tasks = []
-        result_vacancies = []
+    try:
+        url = 'https://api.hh.ru/vacancies'
+        #Формирование параметров запросов на ххру
+        params = {
+            'text': text,
+            'page': page,
+            'per_page': 100,
+            'period': 2,
+            'order_by': 'salary_asc',
+            'only_with_salary': 'true',
+        }
+        if area:
+            city_task = asyncio.create_task(CityRepository.city_get_id_by_name(area.lower()))
+        if roles:
+            role_task = asyncio.create_task(RolesRepository.role_get_id_by_name(roles.lower()))
+        if area:
+            city = await city_task
+            if city:
+                params.update({'area': city})
+        if roles:
+            role = await role_task
+            if role:
+                params.update({'professional_role': role})
         async with httpx.AsyncClient() as client:
-            for p in range(1,
-                           result.json()['pages'],
-                           ):
-                params.update({'page': p})
-                # tasks.append(asyncio.create_task(aiohttp.get(url, params=params)))
+            result = await client.get(url, params=params)
 
-                tasks.append(asyncio.create_task(client.get(url, params=params)))
-            for task in tasks:
-                a = await task
-                result_vacancies.extend(a.json()['items'])
+        # pprint(result.json())
 
-            for v in result_vacancies:
-                vacancies_for_bd.append({'name': v['name'],
-                                         'url': v['alternate_url'],
-                                         'city': v['area']['name'],
-                                         'professional_role': ', '.join(
-                                             [role['name'] for role in v['professional_roles']]),
-                                         'min_salary': f"{v['salary']['from']} {v['salary']['currency']}",
-                                         'max_salary': f"{v['salary']['to']} {v['salary']['currency']}",
-                                         'created_at': now,
-                                         'request_uuid': request_uuid
-                                         })
-                # await asyncio.sleep(0.1)
-        await VacancyRepository.vacancies_add(vacancies_for_bd)
-        end = datetime.datetime.now() - start
-        print(end)
-    return templates.TemplateResponse('vacancies.html', context={
-        'request': request,
-        'vacancies': vacancies,
-        'page_range': page_range,
-        'previous': previous,
-        'next': next,
-        'page': page,
-        'text': text,
-        'roles': roles,
-        'area': area,
-        'request_uuid': request_uuid,
-    })
-    # except Exception as e:
-    #     send_tg(e)
-    #     logger.info(f'При запросе на получение вакансий возникла ошибка {e}')
-    #     return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
+        #Пагинация
+        pages_count = result.json()['pages'] - 1
+        page_range = list(filter(lambda x: 0 <= x <= pages_count, list(range(int(page) - 3, int(page) + 4))))
+        previous = True if int(page) > 0 else False
+        next = True if int(page) < pages_count else False
+        now = datetime.datetime.now().replace(microsecond=0)
+        request_uuid = uuid.uuid4()
+
+        #Формирование таблицы
+        vacancies = []
+        for v in result.json()['items']:
+            vacancies.append({'name': v['name'],
+                              'url': v['alternate_url'],
+                              'city': v['area']['name'],
+                              'professional_role': ', '.join([role['name'] for role in v['professional_roles']]),
+                              'min_salary': f"{v['salary']['from']} {v['salary']['currency']}",
+                              'max_salary': f"{v['salary']['to']} {v['salary']['currency']}",
+                              'created_at': now,
+                              'request_uuid': request_uuid
+                              })
+
+        #Добавление в БД
+        if vacancies and new:
+            # print('Добавляем в БД')
+            start = datetime.datetime.now()
+            vacancies_for_bd = vacancies.copy()
+            # print(result.json()['pages'])
+
+
+
+            tasks = []
+            result_vacancies = []
+            async with httpx.AsyncClient() as client:
+                for p in range(1,
+                               result.json()['pages'],
+                               ):
+                    params.update({'page': p})
+                    # tasks.append(asyncio.create_task(aiohttp.get(url, params=params)))
+
+                    tasks.append(asyncio.create_task(client.get(url, params=params)))
+                for task in tasks:
+                    a = await task
+                    result_vacancies.extend(a.json()['items'])
+
+                for v in result_vacancies:
+                    vacancies_for_bd.append({'name': v['name'],
+                                             'url': v['alternate_url'],
+                                             'city': v['area']['name'],
+                                             'professional_role': ', '.join(
+                                                 [role['name'] for role in v['professional_roles']]),
+                                             'min_salary': f"{v['salary']['from']} {v['salary']['currency']}",
+                                             'max_salary': f"{v['salary']['to']} {v['salary']['currency']}",
+                                             'created_at': now,
+                                             'request_uuid': request_uuid
+                                             })
+                    # await asyncio.sleep(0.1)
+            await VacancyRepository.vacancies_add(vacancies_for_bd)
+            end = datetime.datetime.now() - start
+            print(end)
+        return templates.TemplateResponse('vacancies.html', context={
+            'request': request,
+            'vacancies': vacancies,
+            'page_range': page_range,
+            'previous': previous,
+            'next': next,
+            'page': page,
+            'text': text,
+            'roles': roles,
+            'area': area,
+            'request_uuid': request_uuid,
+        })
+    except Exception as e:
+        send_tg(e)
+        logger.info(f'При запросе на получение вакансий возникла ошибка {e}')
+        return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
 
 
 
