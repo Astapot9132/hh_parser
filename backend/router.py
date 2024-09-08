@@ -3,12 +3,14 @@ import datetime
 import time
 import uuid
 import pygsheets
+import requests
 from .repository import CityRepository, RolesRepository, VacancyRepository
 from fastapi.responses import RedirectResponse
 import httpx
 from fastapi import APIRouter, Depends, Request
 from starlette import status
 from config import *
+import aiohttp
 
 router = APIRouter(
     prefix='/vacancies'
@@ -65,10 +67,12 @@ async def load_gsheets(uuid: str):
     spreadsht = client.open(PGSHEETS_NAME)
     m = spreadsht.worksheet_by_title(PGSHEETS_LIST_NAME)
     values = await VacancyRepository.vacancies_get_by_uuid(uuid)
+    start = datetime.datetime.now()
     start_values = ['Название', 'Ссылка', 'Город', 'Специальность', 'Минимальная зарплата', 'Максимальная зарплата']
     real_values = list(map(lambda x: [x.name, x.url, x.city, x.professional_role, x.min_salary, x.max_salary], values))
     real_values.insert(0, start_values)
     m.clear()
+    #тут хз пока как ускорить, поскольку самая долгая операция именно вставка, надо поизучать апи мб
     m.insert_rows(0, len(real_values) + 1, real_values)
     #Это не лучший вариант, стоит потом переделать
     return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
@@ -82,6 +86,7 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
     В случае если будут найдены вакансии, они добавятся в БД
 
      """
+    # try:
     url = 'https://api.hh.ru/vacancies'
     #Формирование параметров запросов на ххру
     params = {
@@ -115,7 +120,7 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
     previous = True if int(page) > 0 else False
     next = True if int(page) < pages_count else False
     now = datetime.datetime.now().replace(microsecond=0)
-    request_uuid = str(uuid.uuid4())
+    request_uuid = uuid.uuid4()
 
     #Формирование таблицы
     vacancies = []
@@ -136,26 +141,35 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
         start = datetime.datetime.now()
         vacancies_for_bd = vacancies.copy()
         # print(result.json()['pages'])
-        for p in range(1,
-                       result.json()['pages'],
-                       ):
-            params.update({'page': p})
-            async with httpx.AsyncClient() as client:
-                result = await client.get(url, params=params)
-                print(f'page {p} = ok')
-                for v in result.json()['items']:
 
-                    vacancies_for_bd.append({'name': v['name'],
-                                      'url': v['alternate_url'],
-                                      'city': v['area']['name'],
-                                      'professional_role': ', '.join(
-                                          [role['name'] for role in v['professional_roles']]),
-                                      'min_salary': f"{v['salary']['from']} {v['salary']['currency']}",
-                                      'max_salary': f"{v['salary']['to']} {v['salary']['currency']}",
-                                      'created_at': now,
-                                      'request_uuid': request_uuid
-                                      })
-                await asyncio.sleep(0.1)
+
+
+        tasks = []
+        result_vacancies = []
+        async with httpx.AsyncClient() as client:
+            for p in range(1,
+                           result.json()['pages'],
+                           ):
+                params.update({'page': p})
+                # tasks.append(asyncio.create_task(aiohttp.get(url, params=params)))
+
+                tasks.append(asyncio.create_task(client.get(url, params=params)))
+            for task in tasks:
+                a = await task
+                result_vacancies.extend(a.json()['items'])
+
+            for v in result_vacancies:
+                vacancies_for_bd.append({'name': v['name'],
+                                         'url': v['alternate_url'],
+                                         'city': v['area']['name'],
+                                         'professional_role': ', '.join(
+                                             [role['name'] for role in v['professional_roles']]),
+                                         'min_salary': f"{v['salary']['from']} {v['salary']['currency']}",
+                                         'max_salary': f"{v['salary']['to']} {v['salary']['currency']}",
+                                         'created_at': now,
+                                         'request_uuid': request_uuid
+                                         })
+                # await asyncio.sleep(0.1)
         await VacancyRepository.vacancies_add(vacancies_for_bd)
         end = datetime.datetime.now() - start
         print(end)
@@ -171,7 +185,10 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
         'area': area,
         'request_uuid': request_uuid,
     })
-
+    # except Exception as e:
+    #     send_tg(e)
+    #     logger.info(f'При запросе на получение вакансий возникла ошибка {e}')
+    #     return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
 
 
 

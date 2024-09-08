@@ -1,5 +1,7 @@
 import asyncio
 import datetime
+import uuid
+from sqlalchemy import Uuid
 from sqlalchemy import String, select, Boolean, Float, ForeignKey, Date
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, validates
@@ -49,7 +51,7 @@ class Vacancy(Model):
     professional_role: Mapped[str] = mapped_column(String(64))
     min_salary: Mapped[str] = mapped_column(String(16), nullable=True)
     max_salary: Mapped[str] = mapped_column(String(16), nullable=True)
-    request_uuid: Mapped[str] = mapped_column(String(64), nullable=False)
+    request_uuid: Mapped[uuid] = mapped_column(Uuid, nullable=False, index=True)
     created_at: Mapped[datetime.datetime] # это поле можно будет применить для дальнейшей очистки бд
 
 
