@@ -62,6 +62,7 @@ async def load_roles(request: Request):
 @router.post('/load_gsheets/{uuid:str}')
 async def load_gsheets(uuid: str):
     """ Post запрос для загрузки данных в google sheets """
+    start = datetime.datetime.now()
     client = pygsheets.authorize(service_account_file="credentials.json")
     spreadsheet_id = PGSHEETS_ID
     spreadsht = client.open(PGSHEETS_NAME)
@@ -74,6 +75,8 @@ async def load_gsheets(uuid: str):
     m.clear()
     #тут хз пока как ускорить, поскольку самая долгая операция именно вставка, надо поизучать апи мб
     m.insert_rows(0, len(real_values) + 1, real_values)
+    end = datetime.datetime.now() - start
+    print('google sheets load: ', end)
     #Это не лучший вариант, стоит потом переделать
     return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
 
