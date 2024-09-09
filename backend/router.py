@@ -2,6 +2,7 @@ import asyncio
 import datetime
 import time
 import uuid
+from copy import deepcopy
 from pprint import pprint
 
 import pygsheets
@@ -141,6 +142,7 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                               'created_at': now,
                               'request_uuid': request_uuid
                               })
+        pprint(result.json().keys())
 
         #Добавление в БД
         if vacancies and new:
@@ -159,13 +161,16 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                 for p in range(1,
                                result.json()['pages'],
                                ):
-                    params.update({'page': p})
-                    # tasks[p] = asyncio.create_task(client.get(url, params=params))
-                    res = await client.get(url, params=params)
-                    result_vacancies.extend(res.json()['items'])
-                # for p in range(1, result.json()['pages']):
-                #     a = await tasks[p]
-                #     result_vacancies.extend(a.json()['items'])
+                    #дип копи формирует новый объект и он не перетреся при создании задач
+                    new_params = deepcopy(params)
+                    new_params.update({'page': p})
+                    tasks[p] = asyncio.create_task(client.get(url, params=new_params))
+                    # res = await client.get(url, params=params)
+                    # result_vacancies.extend(res.json()['items'])
+                for p in range(1, result.json()['pages']):
+                    a = await tasks[p]
+                    result_vacancies.extend(a.json()['items'])
+                    print(len(a.json()['items']))
                 for v in result_vacancies:
                     vacancies_for_bd.append({'name': v['name'],
                                              'url': v['alternate_url'],
