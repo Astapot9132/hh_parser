@@ -66,24 +66,35 @@ async def load_roles(request: Request):
 async def load_gsheets(uuid: str):
     """
     Post запрос для загрузки данных в google sheets
+
+    тут надо добавить celery как фоновую задачу и не париться,
+    поскольку длинная обработка именно в удалении + вставке записей
+
     """
-    start = datetime.datetime.now()
-    client = pygsheets.authorize(service_account_file="credentials.json")
-    spreadsheet_id = PGSHEETS_ID
-    spreadsht = client.open(PGSHEETS_NAME)
-    m = spreadsht.worksheet_by_title(PGSHEETS_LIST_NAME)
-    values = await VacancyRepository.vacancies_get_by_uuid(uuid)
-    start = datetime.datetime.now()
-    start_values = ['Название', 'Ссылка', 'Город', 'Специальность', 'Минимальная зарплата', 'Максимальная зарплата']
-    real_values = list(map(lambda x: [x.name, x.url, x.city, x.professional_role, x.min_salary, x.max_salary], values))
-    real_values.insert(0, start_values)
-    m.clear()
-    #тут хз пока как ускорить, поскольку самая долгая операция именно вставка, надо поизучать апи мб
-    m.insert_rows(0, len(real_values) + 1, real_values)
-    end = datetime.datetime.now() - start
-    print('google sheets load: ', end)
-    #Это не лучший вариант, стоит потом переделать
-    return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
+    try:
+        start = datetime.datetime.now()
+        client = pygsheets.authorize(service_account_file="credentials.json")
+        spreadsheet_id = PGSHEETS_ID
+        spreadsht = client.open(PGSHEETS_NAME)
+        m = spreadsht.worksheet_by_title(PGSHEETS_LIST_NAME)
+        values = await VacancyRepository.vacancies_get_by_uuid(uuid)
+        stop_1 = datetime.datetime.now() - start
+        print('stop_1 ', stop_1)
+        start_values = ['Название', 'Ссылка', 'Город', 'Специальность', 'Минимальная зарплата', 'Максимальная зарплата']
+        real_values = list(map(lambda x: [x.name, x.url, x.city, x.professional_role, x.min_salary, x.max_salary], values))
+        real_values.insert(0, start_values)
+        stop_2 = datetime.datetime.now() - start
+        print('stop_2 ', stop_2)
+        m.clear()
+        m.insert_rows(0, len(real_values) + 1, real_values)
+        end = datetime.datetime.now() - start
+        print('google sheets load: ', end)
+        #Это не лучший вариант, стоит потом переделать
+        return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
+    except Exception as e:
+        logger.info(f'Возникла ошибка при отправке в гугл таблицы: {e}')
+        send_tg(e)
+        return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
 
 @router.get('/get_vacancies/')
 async def get_vacancies(request: Request, area: str = '', roles: str = '', text: str = '', page: int = 0, new: bool = True):
@@ -119,8 +130,7 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                 params.update({'professional_role': role})
         async with httpx.AsyncClient() as client:
             result = await client.get(url, params=params)
-
-        # pprint(result.json())
+        print(result.json()['pages'])
 
         #Пагинация
         pages_count = result.json()['pages'] - 1
@@ -146,7 +156,6 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
 
         #Добавление в БД
         if vacancies and new:
-            # print('Добавляем в БД')
             start = datetime.datetime.now()
             vacancies_for_bd = vacancies.copy()
             # print(result.json()['pages'])
@@ -155,8 +164,6 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
 
             tasks = {}
             result_vacancies = []
-            #ассинхронный вариант отрабатывал за 1.7 сек при 2000 вакансий, но по каким-то
-            # личным мотивам он берет только последнюю страницу, надо будет разобраться
             async with httpx.AsyncClient() as client:
                 for p in range(1,
                                result.json()['pages'],
@@ -165,12 +172,15 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                     new_params = deepcopy(params)
                     new_params.update({'page': p})
                     tasks[p] = asyncio.create_task(client.get(url, params=new_params))
-                    # res = await client.get(url, params=params)
-                    # result_vacancies.extend(res.json()['items'])
+                    # необходимо засыпать иначе будут отваливаться некоторые запросы
+                    await asyncio.sleep(0.1)
                 for p in range(1, result.json()['pages']):
-                    a = await tasks[p]
-                    result_vacancies.extend(a.json()['items'])
-                    print(len(a.json()['items']))
+                    try:
+                        a = await tasks[p]
+                        result_vacancies.extend(a.json()['items'])
+                    except Exception as e:
+                        send_tg(e)
+                        logger.info(f'Возникла ошибка запроса вакансий: {e}')
                 for v in result_vacancies:
                     vacancies_for_bd.append({'name': v['name'],
                                              'url': v['alternate_url'],
@@ -183,7 +193,6 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                                              'request_uuid': request_uuid
                                              })
             print(len(vacancies_for_bd))
-                    # await asyncio.sleep(0.1)
             await VacancyRepository.vacancies_add(vacancies_for_bd)
             end = datetime.datetime.now() - start
             print(end)

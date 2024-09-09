@@ -65,7 +65,7 @@ async def a_get(pages):
             tasks.append(asyncio.create_task(c.get('https://api.hh.ru/vacancies', params=new_params)))
         for task in tasks:
             r = await task
-            pprint(len(r.json()['items']))
+            pprint(r.status_code)
         await asyncio.sleep(0.1)
 
 
