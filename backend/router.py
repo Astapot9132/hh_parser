@@ -4,7 +4,7 @@ import time
 import uuid
 from copy import deepcopy
 from pprint import pprint
-
+from .tools import *
 import pygsheets
 import requests
 from .repository import CityRepository, RolesRepository, VacancyRepository
@@ -108,26 +108,9 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
     try:
         url = 'https://api.hh.ru/vacancies'
         #Формирование параметров запросов на ххру
-        params = {
-            'text': text,
-            'page': page,
-            'per_page': 100,
-            'period': 2,
-            'order_by': 'salary_asc',
-            'only_with_salary': 'true',
-        }
-        if area:
-            city_task = asyncio.create_task(CityRepository.city_get_id_by_name(area.lower()))
-        if roles:
-            role_task = asyncio.create_task(RolesRepository.role_get_id_by_name(roles.lower()))
-        if area:
-            city = await city_task
-            if city:
-                params.update({'area': city})
-        if roles:
-            role = await role_task
-            if role:
-                params.update({'professional_role': role})
+        params = await get_first_params(text, page, area, roles)
+
+        # Получение первой страницы вакансий
         async with httpx.AsyncClient() as client:
             result = await client.get(url, params=params)
         print(result.json()['pages'])
@@ -152,47 +135,12 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                               'created_at': now,
                               'request_uuid': request_uuid
                               })
-        pprint(result.json().keys())
 
         #Добавление в БД
         if vacancies and new:
             start = datetime.datetime.now()
-            vacancies_for_bd = vacancies.copy()
-            # print(result.json()['pages'])
-
-
-
-            tasks = {}
-            result_vacancies = []
-            async with httpx.AsyncClient() as client:
-                for p in range(1,
-                               result.json()['pages'],
-                               ):
-                    #дип копи формирует новый объект и он не перетреся при создании задач
-                    new_params = deepcopy(params)
-                    new_params.update({'page': p})
-                    tasks[p] = asyncio.create_task(client.get(url, params=new_params))
-                    # необходимо засыпать иначе будут отваливаться некоторые запросы
-                    await asyncio.sleep(0.1)
-                for p in range(1, result.json()['pages']):
-                    try:
-                        a = await tasks[p]
-                        result_vacancies.extend(a.json()['items'])
-                    except Exception as e:
-                        send_tg(e)
-                        logger.info(f'Возникла ошибка запроса вакансий: {e}')
-                for v in result_vacancies:
-                    vacancies_for_bd.append({'name': v['name'],
-                                             'url': v['alternate_url'],
-                                             'city': v['area']['name'],
-                                             'professional_role': ', '.join(
-                                                 [role['name'] for role in v['professional_roles']]),
-                                             'min_salary': f"{v['salary']['from']} {v['salary']['currency']}",
-                                             'max_salary': f"{v['salary']['to']} {v['salary']['currency']}",
-                                             'created_at': now,
-                                             'request_uuid': request_uuid
-                                             })
-            print(len(vacancies_for_bd))
+            # К сожалению запрос пришлось замедлить, иначе при ассинхронных запросах иногда возникают ошибки
+            vacancies_for_bd = await get_vacancies_for_bd(result, vacancies, params, now, request_uuid)
             await VacancyRepository.vacancies_add(vacancies_for_bd)
             end = datetime.datetime.now() - start
             print(end)
