@@ -72,3 +72,6 @@ async def get_vacancies_for_bd(first_request, first_vacancies, first_params, now
     print(len(vacancies_for_bd))
     return vacancies_for_bd
 
+def work_with_gsheets(table, rows):
+    table.clear()
+    table.insert_rows(0, len(rows) + 1, rows)

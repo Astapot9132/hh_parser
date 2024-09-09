@@ -10,7 +10,7 @@ import requests
 from .repository import CityRepository, RolesRepository, VacancyRepository
 from fastapi.responses import RedirectResponse
 import httpx
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends, Request, BackgroundTasks
 from starlette import status
 from config import *
 import aiohttp
@@ -63,7 +63,7 @@ async def load_roles(request: Request):
 
 
 @router.post('/load_gsheets/{uuid:str}')
-async def load_gsheets(uuid: str):
+async def load_gsheets(uuid: str, background_tasks: BackgroundTasks):
     """
     Post запрос для загрузки данных в google sheets
 
@@ -85,8 +85,8 @@ async def load_gsheets(uuid: str):
         real_values.insert(0, start_values)
         stop_2 = datetime.datetime.now() - start
         print('stop_2 ', stop_2)
-        m.clear()
-        m.insert_rows(0, len(real_values) + 1, real_values)
+        # Ускорил пока без селери, задача сетевая и не требует вычислей, пожалуй сойдет
+        background_tasks.add_task(work_with_gsheets, m, real_values)
         end = datetime.datetime.now() - start
         print('google sheets load: ', end)
         #Это не лучший вариант, стоит потом переделать
