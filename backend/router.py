@@ -65,10 +65,6 @@ async def load_roles(request: Request):
 async def load_gsheets(uuid: str):
     """
     Post запрос для загрузки данных в google sheets
-
-    Все работало ок, когда был медленный запрос с добавлением в бд, но после ассинхронной загрузки появилась ошибка
-    c неконтролируемым добавлением в бд по поиску, где-то ошибка в логике,
-    надо посмотреть
     """
     start = datetime.datetime.now()
     client = pygsheets.authorize(service_account_file="credentials.json")
