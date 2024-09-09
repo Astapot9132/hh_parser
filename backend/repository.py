@@ -68,6 +68,7 @@ class VacancyRepository:
     @classmethod
     async def vacancies_add(cls, vacancies: list[dict]):
         async with new_session() as session:
+            # print('here')
             query_insert = insert(Vacancy).values(vacancies)
             await session.execute(query_insert)
             await session.commit()

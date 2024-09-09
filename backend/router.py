@@ -2,6 +2,8 @@ import asyncio
 import datetime
 import time
 import uuid
+from pprint import pprint
+
 import pygsheets
 import requests
 from .repository import CityRepository, RolesRepository, VacancyRepository
@@ -65,7 +67,7 @@ async def load_gsheets(uuid: str):
     Post запрос для загрузки данных в google sheets
 
     Все работало ок, когда был медленный запрос с добавлением в бд, но после ассинхронной загрузки появилась ошибка
-    c неконтролируемым добавлением в бд неотсортированными значениями, плюс не все, где-то ошибка в логике,
+    c неконтролируемым добавлением в бд по поиску, где-то ошибка в логике,
     надо посмотреть
     """
     start = datetime.datetime.now()
@@ -160,12 +162,12 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                                result.json()['pages'],
                                ):
                     params.update({'page': p})
-                    print(f'page: {p}')
+                    # вот в этом месте ошибка, почему-то в словарь все задачи попадают только с последней страницей
                     tasks[p] = asyncio.create_task(client.get(url, params=params))
+
                 for p in range(1, result.json()['pages']):
                     a = await tasks[p]
                     result_vacancies.extend(a.json()['items'])
-
                 for v in result_vacancies:
                     vacancies_for_bd.append({'name': v['name'],
                                              'url': v['alternate_url'],
@@ -177,6 +179,7 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                                              'created_at': now,
                                              'request_uuid': request_uuid
                                              })
+            print(len(vacancies_for_bd))
                     # await asyncio.sleep(0.1)
             await VacancyRepository.vacancies_add(vacancies_for_bd)
             end = datetime.datetime.now() - start
