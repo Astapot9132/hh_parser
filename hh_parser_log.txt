@@ -1,0 +1,1275 @@
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:49:27
+INFO:main:Response: 200
+INFO:main:Response time: 0.022060871124267578
+INFO:main:Request: GET http://localhost:2027/static/style.css
+INFO:main:Datetime: 2024-09-09 07:49:27
+INFO:main:Response: 304
+INFO:main:Response time: 0.018614768981933594
+INFO:main:Request: GET http://localhost:2027/favicon.ico
+INFO:main:Datetime: 2024-09-09 07:49:27
+INFO:main:Response: 404
+INFO:main:Response time: 0.0019466876983642578
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:49:30
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка 'NoneType' object is not subscriptable
+INFO:main:Response: 302
+INFO:main:Response time: 1.103727102279663
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:49:31
+INFO:main:Response: 200
+INFO:main:Response time: 0.00766301155090332
+INFO:main:Request: POST http://localhost:2027/vacancies/load_roles
+INFO:main:Datetime: 2024-09-09 07:49:37
+INFO:httpx:HTTP Request: GET https://api.hh.ru/professional_roles "HTTP/1.1 200 OK"
+INFO:main:Response: 302
+INFO:main:Response time: 0.2358708381652832
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:49:37
+INFO:main:Response: 200
+INFO:main:Response time: 0.025765419006347656
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:49:39
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка 'NoneType' object is not subscriptable
+INFO:main:Response: 302
+INFO:main:Response time: 0.8403444290161133
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:49:40
+INFO:main:Response: 200
+INFO:main:Response time: 0.003923177719116211
+INFO:main:Request: POST http://localhost:2027/vacancies/load_roles
+INFO:main:Datetime: 2024-09-09 07:49:47
+INFO:httpx:HTTP Request: GET https://api.hh.ru/professional_roles "HTTP/1.1 200 OK"
+INFO:main:Response: 302
+INFO:main:Response time: 0.686650276184082
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:49:47
+INFO:main:Response: 200
+INFO:main:Response time: 0.00572657585144043
+INFO:main:Request: POST http://localhost:2027/vacancies/load_cities
+INFO:main:Datetime: 2024-09-09 07:49:48
+INFO:httpx:HTTP Request: GET https://api.hh.ru/areas "HTTP/1.1 200 OK"
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:49:50
+INFO:main:Response: 302
+INFO:main:Response time: 2.4800403118133545
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка 'NoneType' object is not subscriptable
+INFO:main:Response: 302
+INFO:main:Response time: 1.1109066009521484
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:49:51
+INFO:main:Response: 200
+INFO:main:Response time: 0.0065822601318359375
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:49:53
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка 'NoneType' object is not subscriptable
+INFO:main:Response: 302
+INFO:main:Response time: 1.1217644214630127
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:49:54
+INFO:main:Response: 200
+INFO:main:Response time: 0.005707979202270508
+INFO:main:Request: POST http://localhost:2027/vacancies/load_cities
+INFO:main:Datetime: 2024-09-09 07:50:13
+INFO:httpx:HTTP Request: GET https://api.hh.ru/areas "HTTP/1.1 200 OK"
+INFO:main:Response: 302
+INFO:main:Response time: 1.8637189865112305
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:50:15
+INFO:main:Response: 200
+INFO:main:Response time: 0.02771282196044922
+INFO:main:Request: POST http://localhost:2027/vacancies/load_roles
+INFO:main:Datetime: 2024-09-09 07:50:16
+INFO:httpx:HTTP Request: GET https://api.hh.ru/professional_roles "HTTP/1.1 200 OK"
+INFO:main:Response: 302
+INFO:main:Response time: 0.27715301513671875
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:50:16
+INFO:main:Response: 200
+INFO:main:Response time: 0.003682374954223633
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:50:18
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка 'NoneType' object is not subscriptable
+INFO:main:Response: 302
+INFO:main:Response time: 1.3971314430236816
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:50:19
+INFO:main:Response: 200
+INFO:main:Response time: 0.00674748420715332
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 07:50:25
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 1.1586010456085205
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:50:29
+INFO:main:Response: 200
+INFO:main:Response time: 0.00570988655090332
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:50:39
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка 'NoneType' object is not subscriptable
+INFO:main:Response: 302
+INFO:main:Response time: 1.3568925857543945
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:50:40
+INFO:main:Response: 200
+INFO:main:Response time: 0.005736589431762695
+INFO:main:Request: POST http://localhost:2027/vacancies/load_roles
+INFO:main:Datetime: 2024-09-09 07:52:07
+INFO:httpx:HTTP Request: GET https://api.hh.ru/professional_roles "HTTP/1.1 200 OK"
+INFO:main:Response: 302
+INFO:main:Response time: 0.3963911533355713
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:52:08
+INFO:main:Response: 200
+INFO:main:Response time: 0.02585911750793457
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:52:09
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 3.2024755477905273
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:52:26
+INFO:main:Response: 200
+INFO:main:Response time: 0.023299217224121094
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:52:28
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 4.38762092590332
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:54:17
+INFO:main:Response: 200
+INFO:main:Response time: 0.01571369171142578
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:54:18
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка not enough values to unpack (expected 2, got 1)
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-20' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-22' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-24' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-25' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-26' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-27' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-28' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-29' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-30' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-31' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+INFO:main:Response: 302
+INFO:main:Response time: 0.813058614730835
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:54:19
+INFO:main:Response: 200
+INFO:main:Response time: 0.0036334991455078125
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:54:22
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка not enough values to unpack (expected 2, got 1)
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-8' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-20' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-22' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-24' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-25' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-26' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+INFO:main:Response: 302
+INFO:main:Response time: 1.520308017730713
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:54:23
+INFO:main:Response: 200
+INFO:main:Response time: 0.0231168270111084
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:55:36
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка not enough values to unpack (expected 2, got 1)
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-8' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-9' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-10' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-11' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-12' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-20' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-22' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-24' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-25' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-26' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+INFO:main:Response: 302
+INFO:main:Response time: 0.7102837562561035
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:55:36
+INFO:main:Response: 200
+INFO:main:Response time: 0.016568660736083984
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:55:38
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка not enough values to unpack (expected 2, got 1)
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-38' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-39' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-40' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-41' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-42' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-43' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-44' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-45' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-46' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-47' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-48' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-49' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-50' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-51' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-52' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-53' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-54' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-55' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-56' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+INFO:main:Response: 302
+INFO:main:Response time: 0.7136833667755127
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 07:55:39
+INFO:main:Response: 200
+INFO:main:Response time: 0.0036957263946533203
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 07:58:02
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 5.776853561401367
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:00:14
+INFO:main:Response: 200
+INFO:main:Response time: 0.01907801628112793
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 08:00:15
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка 0
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-15' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-16' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-19' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-20' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-21' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-22' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-24' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-25' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-26' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-27' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-28' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-29' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-30' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-31' coro=<AsyncClient.get() done, defined at /usr/local/lib/python3.10/site-packages/httpx/_client.py:1784> exception=RuntimeError('Cannot send a request, as the client has been closed.')>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1801, in get
+    return await self.request(
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1574, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/usr/local/lib/python3.10/site-packages/httpx/_client.py", line 1650, in send
+    raise RuntimeError("Cannot send a request, as the client has been closed.")
+RuntimeError: Cannot send a request, as the client has been closed.
+INFO:main:Response: 302
+INFO:main:Response time: 0.6267406940460205
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:00:16
+INFO:main:Response: 200
+INFO:main:Response time: 0.004186391830444336
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 08:00:54
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=19&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 4.107757568359375
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=&page=3&new=False
+INFO:main:Datetime: 2024-09-09 08:01:03
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=3&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 0.5853571891784668
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=&page=6&new=False
+INFO:main:Datetime: 2024-09-09 08:01:04
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=6&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.165994644165039
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=&page=9&new=False
+INFO:main:Datetime: 2024-09-09 08:01:07
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=9&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 1.5224683284759521
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:01:10
+INFO:main:Response: 200
+INFO:main:Response time: 0.025223255157470703
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 08:01:16
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.5709972381591797
+INFO:main:Request: POST http://localhost:2027/vacancies/load_gsheets/c8cfd7d0-3b4b-414a-82e2-7e7e90750e11
+INFO:main:Datetime: 2024-09-09 08:01:20
+INFO:main:Response: 302
+INFO:main:Response time: 6.51369047164917
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:01:26
+INFO:main:Response: 200
+INFO:main:Response time: 0.012279987335205078

@@ -63,10 +63,6 @@ async def load_roles(request: Request):
 async def load_gsheets(uuid: str):
     """
     Post запрос для загрузки данных в google sheets
-    Поскольку теперь в БД записи добавляются ассинхронно, то при отправке в gsheets
-    они не отсортированы по зп, надо разделить столбики зп и валюты,
-    но тогда как сравнивать где меньше, а где больше, а если
-    добавлять в отсортированном порядке, то страдает скорость добавления в бд (next_step)
     """
     start = datetime.datetime.now()
     client = pygsheets.authorize(service_account_file="credentials.json")
@@ -153,18 +149,17 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
 
 
 
-            tasks = []
+            tasks = {}
             result_vacancies = []
             async with httpx.AsyncClient() as client:
                 for p in range(1,
                                result.json()['pages'],
                                ):
                     params.update({'page': p})
-                    # tasks.append(asyncio.create_task(aiohttp.get(url, params=params)))
-
-                    tasks.append(asyncio.create_task(client.get(url, params=params)))
-                for task in tasks:
-                    a = await task
+                    print(f'page: {p}')
+                    tasks[p] = asyncio.create_task(client.get(url, params=params))
+                for p in range(1, result.json()['pages']):
+                    a = await tasks[p]
                     result_vacancies.extend(a.json()['items'])
 
                 for v in result_vacancies:
