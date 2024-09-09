@@ -157,17 +157,19 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
 
             tasks = {}
             result_vacancies = []
+            #ассинхронный вариант отрабатывал за 1.7 сек при 2000 вакансий, но по каким-то
+            # личным мотивам он берет только последнюю страницу, надо будет разобраться
             async with httpx.AsyncClient() as client:
                 for p in range(1,
                                result.json()['pages'],
                                ):
                     params.update({'page': p})
-                    # вот в этом месте ошибка, почему-то в словарь все задачи попадают только с последней страницей
-                    tasks[p] = asyncio.create_task(client.get(url, params=params))
-
-                for p in range(1, result.json()['pages']):
-                    a = await tasks[p]
-                    result_vacancies.extend(a.json()['items'])
+                    # tasks[p] = asyncio.create_task(client.get(url, params=params))
+                    res = await client.get(url, params=params)
+                    result_vacancies.extend(res.json()['items'])
+                # for p in range(1, result.json()['pages']):
+                #     a = await tasks[p]
+                #     result_vacancies.extend(a.json()['items'])
                 for v in result_vacancies:
                     vacancies_for_bd.append({'name': v['name'],
                                              'url': v['alternate_url'],

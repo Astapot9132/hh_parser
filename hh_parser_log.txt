@@ -3653,3 +3653,304 @@ INFO:main:Request: GET http://localhost:2027/vacancies/
 INFO:main:Datetime: 2024-09-09 08:37:06
 INFO:main:Response: 200
 INFO:main:Response time: 0.0037610530853271484
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 08:41:52
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка Cannot send a request, as the client has been closed.
+INFO:main:Response: 302
+INFO:main:Response time: 0.7989718914031982
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:41:53
+INFO:main:Response: 200
+INFO:main:Response time: 0.027385950088500977
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 08:42:57
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка Cannot send a request, as the client has been closed.
+INFO:main:Response: 302
+INFO:main:Response time: 1.2319846153259277
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:42:59
+INFO:main:Response: 200
+INFO:main:Response time: 0.021578311920166016
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 08:47:30
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=26&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 0.5925607681274414
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:47:34
+INFO:main:Response: 200
+INFO:main:Response time: 0.023057222366333008
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 08:47:40
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка a coroutine was expected, got <Response [200]>
+INFO:main:Response: 302
+INFO:main:Response time: 1.8909180164337158
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:47:41
+INFO:main:Response: 200
+INFO:main:Response time: 0.025393009185791016
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 08:48:34
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 19.200989484786987
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:48:57
+INFO:main:Response: 200
+INFO:main:Response time: 0.027286529541015625
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 08:49:02
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.5072572231292725
+INFO:main:Request: POST http://localhost:2027/vacancies/load_gsheets/62ba7d1a-55b1-4bd2-a798-6fee45025f57
+INFO:main:Datetime: 2024-09-09 08:49:07
+INFO:main:Response: 302
+INFO:main:Response time: 5.743275165557861
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:49:12
+INFO:main:Response: 200
+INFO:main:Response time: 0.028476953506469727
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:59:34
+INFO:main:Response: 200
+INFO:main:Response time: 0.022333145141601562
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 08:59:42
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.6728458404541016
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82&page=2&new=False
+INFO:main:Datetime: 2024-09-09 08:59:47
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 1.1587507724761963
+INFO:main:Request: POST http://localhost:2027/vacancies/load_gsheets/2933ed58-13b9-4f92-884a-d2de7b9dfa76
+INFO:main:Datetime: 2024-09-09 08:59:52
+INFO:main:Response: 302
+INFO:main:Response time: 5.500584602355957
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 08:59:58
+INFO:main:Response: 200
+INFO:main:Response time: 0.017472028732299805
+INFO:main:Request: POST http://localhost:2027/vacancies/load_roles
+INFO:main:Datetime: 2024-09-09 09:00:53
+INFO:httpx:HTTP Request: GET https://api.hh.ru/professional_roles "HTTP/1.1 200 OK"
+INFO:main:Response: 302
+INFO:main:Response time: 0.34162163734436035
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:00:53
+INFO:main:Response: 200
+INFO:main:Response time: 0.02780938148498535
+INFO:main:Request: POST http://localhost:2027/vacancies/load_cities
+INFO:main:Datetime: 2024-09-09 09:00:54
+INFO:httpx:HTTP Request: GET https://api.hh.ru/areas "HTTP/1.1 200 OK"
+INFO:main:Response: 302
+INFO:main:Response time: 1.8828418254852295
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:00:56
+INFO:main:Response: 200
+INFO:main:Response time: 0.0037322044372558594
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:01:03
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 1.3837568759918213
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82&page=2&new=False
+INFO:main:Datetime: 2024-09-09 09:01:07
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 0.5354266166687012
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:02:28
+INFO:main:Response: 200
+INFO:main:Response time: 0.019108295440673828
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:02:33
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.611248254776001
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:03:29
+INFO:main:Response: 200
+INFO:main:Response time: 0.0213925838470459
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:03:34
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.091331720352173
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:09:47
+INFO:main:Response: 200
+INFO:main:Response time: 0.02391505241394043
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:09:59
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка __enter__
+INFO:main:Response: 302
+INFO:main:Response time: 0.6285679340362549
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:10:00
+INFO:main:Response: 200
+INFO:main:Response time: 0.0036499500274658203
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:10:38
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка __enter__
+INFO:main:Response: 302
+INFO:main:Response time: 1.069437026977539
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:10:39
+INFO:main:Response: 200
+INFO:main:Response time: 0.026143789291381836
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 09:11:36
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка __enter__
+INFO:main:Response: 302
+INFO:main:Response time: 0.6706948280334473
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:11:37
+INFO:main:Response: 200
+INFO:main:Response time: 0.025612592697143555
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 09:12:13
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка __enter__
+INFO:main:Response: 302
+INFO:main:Response time: 0.4948258399963379
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:12:14
+INFO:main:Response: 200
+INFO:main:Response time: 0.021671772003173828
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=&roles=
+INFO:main:Datetime: 2024-09-09 09:13:19
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка __enter__
+INFO:main:Response: 302
+INFO:main:Response time: 1.3164734840393066
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:13:20
+INFO:main:Response: 200
+INFO:main:Response time: 0.017266273498535156
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:15:03
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.1158204078674316
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:15:39
+INFO:main:Response: 200
+INFO:main:Response time: 0.01761007308959961
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:15:44
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.727114200592041
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:16:29
+INFO:main:Response: 200
+INFO:main:Response time: 0.018142223358154297
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:16:34
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 3.4563496112823486
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:18:42
+INFO:main:Response: 200
+INFO:main:Response time: 0.014066696166992188
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:18:47
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 6.5352942943573
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:19:30
+INFO:main:Response: 200
+INFO:main:Response time: 0.014071464538574219
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:19:35
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:При запросе на получение вакансий возникла ошибка 
+INFO:main:Response: 302
+INFO:main:Response time: 11.569760084152222
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:19:46
+INFO:main:Response: 200
+INFO:main:Response time: 0.0031604766845703125
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:20:39
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.1308975219726562
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:20:51
+INFO:main:Response: 200
+INFO:main:Response time: 0.027915477752685547
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:20:57
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 2.152522325515747
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:22:34
+INFO:main:Response: 200
+INFO:main:Response time: 0.013000965118408203
+INFO:main:Request: GET http://localhost:2027/vacancies/get_vacancies/?text=&area=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0&roles=%D0%AE%D1%80%D0%B8%D1%81%D1%82
+INFO:main:Datetime: 2024-09-09 09:22:40
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=0&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=1&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://api.hh.ru/vacancies?text=&page=2&per_page=100&period=2&order_by=salary_asc&only_with_salary=true&area=1&professional_role=146 "HTTP/1.1 200 OK"
+INFO:main:Response: 200
+INFO:main:Response time: 1.698030710220337
+INFO:main:Request: POST http://localhost:2027/vacancies/load_gsheets/5eb85c48-a439-4005-b7c2-3f355ff4eb2b
+INFO:main:Datetime: 2024-09-09 09:22:53
+INFO:main:Response: 302
+INFO:main:Response time: 5.64174222946167
+INFO:main:Request: GET http://localhost:2027/vacancies/
+INFO:main:Datetime: 2024-09-09 09:22:59
+INFO:main:Response: 200
+INFO:main:Response time: 0.004393339157104492
