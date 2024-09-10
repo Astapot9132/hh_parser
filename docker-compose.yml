@@ -25,12 +25,38 @@ services:
       - ${APP_PORT}:${APP_PORT}
     depends_on:
       - postgres
-#      - redis
+      - redis
     env_file:
       - ./.env
 
-#  redis:
-#    image: redis:7
+  celery:
+    build: ./
+    command: bash -c "celery -A celery_app.celery_app.celery_app worker --loglevel=INFO"
+    volumes:
+      - .:/code/
+    environment:
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND}
+    depends_on:
+      - fastapi
+      - redis
+
+  redis:
+    image: redis:7
+
+  dashboard:
+    build: ./
+    command: celery --broker=${CELERY_BROKER_URL} flower --port=5555
+    ports:
+      - 5556:5555
+    environment:
+      - CELERY_BROKER_URL=${CELERY_BROKER_URL}
+      - CELERY_RESULT_BACKEND=${CELERY_RESULT_BACKEND}
+    depends_on:
+      - fastapi
+      - redis
+      - celery
+
 
 volumes:
   postgres:

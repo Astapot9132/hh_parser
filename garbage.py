@@ -29,47 +29,47 @@ import requests
 #
 # # print(len(result))
 #
-
-def get_vacancies(page=0):
-    params = {
-        'text': '',
-        # 'area': '',
-        'page': page,
-        'per_page': 10,
-        'period': 2,
-        # 'professional_role': 'Юрист'
-    }
-
-    req = requests.get('https://api.hh.ru/vacancies', params)
-    data = req.json()
-    return data
-v = get_vacancies()
-
-
-async def a_get(pages):
-    params = {
-        'text': '',
-        'area': 1,
-        'page': '',
-        'per_page': 100,
-        'period': 2,
-        'professional_role': 146
-    }
-    tasks = []
-    result = []
-    async with httpx.AsyncClient() as c:
-        for p in range(pages):
-
-            new_params = deepcopy(params)
-            new_params.update({'page': p})
-            tasks.append(asyncio.create_task(c.get('https://api.hh.ru/vacancies', params=new_params)))
-        for task in tasks:
-            r = await task
-            pprint(r.status_code)
-        await asyncio.sleep(0.1)
-
-
-asyncio.run(a_get(5))
+#
+# def get_vacancies(page=0):
+#     params = {
+#         'text': '',
+#         # 'area': '',
+#         'page': page,
+#         'per_page': 10,
+#         'period': 2,
+#         # 'professional_role': 'Юрист'
+#     }
+#
+#     req = requests.get('https://api.hh.ru/vacancies', params)
+#     data = req.json()
+#     return data
+# v = get_vacancies()
+#
+#
+# async def a_get(pages):
+#     params = {
+#         'text': '',
+#         'area': 1,
+#         'page': '',
+#         'per_page': 100,
+#         'period': 2,
+#         'professional_role': 146
+#     }
+#     tasks = []
+#     result = []
+#     async with httpx.AsyncClient() as c:
+#         for p in range(pages):
+#
+#             new_params = deepcopy(params)
+#             new_params.update({'page': p})
+#             tasks.append(asyncio.create_task(c.get('https://api.hh.ru/vacancies', params=new_params)))
+#         for task in tasks:
+#             r = await task
+#             pprint(r.status_code)
+#         await asyncio.sleep(0.1)
+#
+#
+# asyncio.run(a_get(5))
 # def get_professional_roles():
 #     res = requests.get('https://api.hh.ru/professional_roles')
 #     return res.json()

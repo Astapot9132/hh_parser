@@ -1,19 +1,12 @@
-import asyncio
-import datetime
-import time
-import uuid
-from copy import deepcopy
-from pprint import pprint
+from starlette.responses import JSONResponse
 from .tools import *
-import pygsheets
-import requests
 from .repository import CityRepository, RolesRepository, VacancyRepository
 from fastapi.responses import RedirectResponse
 import httpx
-from fastapi import APIRouter, Depends, Request, BackgroundTasks
+from fastapi import APIRouter, Request
 from starlette import status
 from config import *
-import aiohttp
+from celery_app.celery_app import celery_app, work_with_gsheets
 
 router = APIRouter(
     prefix='/vacancies'
@@ -63,38 +56,21 @@ async def load_roles(request: Request):
 
 
 @router.post('/load_gsheets/{uuid:str}')
-async def load_gsheets(uuid: str, background_tasks: BackgroundTasks):
-    """
-    Post запрос для загрузки данных в google sheets
-
-    тут надо добавить celery как фоновую задачу и не париться,
-    поскольку длинная обработка именно в удалении + вставке записей
-
-    """
+async def load_gsheets(uuid: str):
+    """ Post запрос для загрузки данных в google sheets """
     try:
-        start = datetime.datetime.now()
-        client = pygsheets.authorize(service_account_file="credentials.json")
-        spreadsheet_id = PGSHEETS_ID
-        spreadsht = client.open(PGSHEETS_NAME)
-        m = spreadsht.worksheet_by_title(PGSHEETS_LIST_NAME)
-        values = await VacancyRepository.vacancies_get_by_uuid(uuid)
-        stop_1 = datetime.datetime.now() - start
-        print('stop_1 ', stop_1)
-        start_values = ['Название', 'Ссылка', 'Город', 'Специальность', 'Минимальная зарплата', 'Максимальная зарплата']
-        real_values = list(map(lambda x: [x.name, x.url, x.city, x.professional_role, x.min_salary, x.max_salary], values))
-        real_values.insert(0, start_values)
-        stop_2 = datetime.datetime.now() - start
-        print('stop_2 ', stop_2)
-        # Ускорил пока без селери, задача сетевая и не требует вычислей, пожалуй сойдет
-        background_tasks.add_task(work_with_gsheets, m, real_values)
-        end = datetime.datetime.now() - start
-        print('google sheets load: ', end)
+        task = work_with_gsheets.delay(uuid)
+        print(task.id)
+        return JSONResponse({'task_id': task.id})
         #Это не лучший вариант, стоит потом переделать
-        return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
+        # return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
     except Exception as e:
         logger.info(f'Возникла ошибка при отправке в гугл таблицы: {e}')
         send_tg(e)
         return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
+
+
+
 
 @router.get('/get_vacancies/')
 async def get_vacancies(request: Request, area: str = '', roles: str = '', text: str = '', page: int = 0, new: bool = True):

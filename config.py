@@ -32,7 +32,8 @@ PGSHEETS_NAME = os.getenv('PGSHEETS_NAME')
 # Название листа с данными для записи
 PGSHEETS_LIST_NAME = os.getenv('PGSHEETS_LIST_NAME')
 #
-
+CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL')
+CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND')
 
 # параметр для использования локальной БД
 DEVELOPING = False

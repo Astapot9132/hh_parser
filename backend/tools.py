@@ -1,11 +1,11 @@
 import asyncio
+import datetime
 import uuid
 from copy import deepcopy
-
+from celery_app.celery_app import celery_app
 import httpx
 from config import *
-from .repository import VacancyRepository, CityRepository, RolesRepository
-import requests
+from .repository import CityRepository, RolesRepository, VacancyRepository
 
 
 async def get_first_params(text, page, area, roles):
@@ -45,7 +45,7 @@ async def get_vacancies_for_bd(first_request, first_vacancies, first_params, now
         for p in range(1,
                        first_request.json()['pages'],
                        ):
-            # дип копи формирует новый объект и он не перетреся при создании задач
+            # дип копи формирует новый объект и он не перетрется при создании задач
             new_params = deepcopy(first_params)
             new_params.update({'page': p})
             tasks[p] = asyncio.create_task(client.get(url, params=new_params))
@@ -72,6 +72,3 @@ async def get_vacancies_for_bd(first_request, first_vacancies, first_params, now
     print(len(vacancies_for_bd))
     return vacancies_for_bd
 
-def work_with_gsheets(table, rows):
-    table.clear()
-    table.insert_rows(0, len(rows) + 1, rows)
