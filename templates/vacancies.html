@@ -90,8 +90,15 @@
                     url: "http://localhost:2027/vacancies/load_gsheets/{{request_uuid}}",
                     type: "POST",
                 });
+                var button = document.getElementById("UploadGSheets");
+                console.log("Вы нажали на кнопку");
+                button.disabled = true;
+                button.style.backgroundColor = "grey";
+                button.style.color = "green";
+                button.innerHTML = "Вакансии отправлены в GSheets";
             });
           });
+
     </script>
 
 

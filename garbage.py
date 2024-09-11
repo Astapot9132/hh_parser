@@ -12,6 +12,10 @@ import pygsheets
 import requests
 
 """ файл для исследовательских тестов :) """
+
+
+
+
 #
 # res = requests.get('https://api.hh.ru/areas')
 # counter = 0

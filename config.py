@@ -57,3 +57,20 @@ def send_tg(message):
             print(e)
             logger.info(e)
     return
+
+
+
+class ProgressForUpload:
+    def __init__(self):
+        self.progress = 0
+
+    def get_progress(self):
+        return self.progress
+
+    def set_progress(self, value):
+        if value:
+            self.progress = value
+        return value
+
+    def reset_progress(self):
+        self.progress = 0

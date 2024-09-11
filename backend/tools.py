@@ -1,7 +1,10 @@
 import asyncio
 import datetime
+import traceback
 import uuid
 from copy import deepcopy
+from pprint import pprint
+
 from celery_app.celery_app import celery_app
 import httpx
 from config import *
@@ -59,16 +62,26 @@ async def get_vacancies_for_bd(first_request, first_vacancies, first_params, now
                 send_tg(e)
                 logger.info(f'Возникла ошибка запроса вакансий: {e}')
         for v in result_vacancies:
-            vacancies_for_bd.append({'name': v['name'],
-                                     'url': v['alternate_url'],
-                                     'city': v['area']['name'],
-                                     'professional_role': ', '.join(
-                                         [role['name'] for role in v['professional_roles']]),
-                                     'min_salary': f"{v['salary']['from']} {v['salary']['currency']}",
-                                     'max_salary': f"{v['salary']['to']} {v['salary']['currency']}",
-                                     'created_at': now,
-                                     'request_uuid': request_uuid
-                                     })
+            try:
+                if v.get('salary'):
+                    from_salary = f"{v.get('salary').get('from')} {v.get('salary').get('currency')}"
+                    to_salary = f"{v.get('salary').get('to')} {v.get('salary').get('currency')}"
+                else:
+                    from_salary = 'Нет информации'
+                    to_salary = 'Нет информации'
+
+                vacancies_for_bd.append({'name': v['name'],
+                                         'url': v['alternate_url'],
+                                         'city': v['area']['name'],
+                                         'professional_role': ', '.join(
+                                             [role['name'] for role in v['professional_roles']]),
+                                         'min_salary': from_salary,
+                                         'max_salary': to_salary,
+                                         'created_at': now,
+                                         'request_uuid': request_uuid
+                                         })
+            except Exception as e:
+                send_tg(traceback.format_exc)
     print(len(vacancies_for_bd))
     return vacancies_for_bd
 

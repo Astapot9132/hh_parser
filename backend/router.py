@@ -1,3 +1,5 @@
+import traceback
+
 from starlette.responses import JSONResponse
 from .tools import *
 from .repository import CityRepository, RolesRepository, VacancyRepository
@@ -12,11 +14,18 @@ router = APIRouter(
     prefix='/vacancies'
 )
 
+progress = ProgressForUpload()
+
+@router.get("/progress")
+def get_progress():
+    print(f'progres = {progress.get_progress()}')
+    return {"progress": progress.get_progress()}
 
 @router.get("/")
 async def hello(request: Request):
     """ Начальная страница """
-    return templates.TemplateResponse(name='main.html', context={'request': request})
+    progress.reset_progress()
+    return templates.TemplateResponse(name='main.html', context={'request': request, 'progress': progress.get_progress()})
 
 
 @router.post('/load_cities')
@@ -75,6 +84,7 @@ async def load_gsheets(uuid: str):
 @router.get('/get_vacancies/')
 async def get_vacancies(request: Request, area: str = '', roles: str = '', text: str = '', page: int = 0, new: bool = True):
     """
+    Осталось доделать прогресс-бар (он работает, но почему-то опять начались ошибки с добавлением в БД)
 
     Получение списка вакансий по заданным параметрам.
 
@@ -90,7 +100,8 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
         async with httpx.AsyncClient() as client:
             result = await client.get(url, params=params)
         print(result.json()['pages'])
-
+        progress.set_progress(10)
+        print('progress in back ', progress)
         #Пагинация
         pages_count = result.json()['pages'] - 1
         page_range = list(filter(lambda x: 0 <= x <= pages_count, list(range(int(page) - 3, int(page) + 4))))
@@ -98,7 +109,6 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
         next = True if int(page) < pages_count else False
         now = datetime.datetime.now().replace(microsecond=0)
         request_uuid = uuid.uuid4()
-
         #Формирование таблицы
         vacancies = []
         for v in result.json()['items']:
@@ -111,15 +121,21 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
                               'created_at': now,
                               'request_uuid': request_uuid
                               })
-
+        progress.set_progress(30)
+        print('progress in back ', progress)
         #Добавление в БД
         if vacancies and new:
             start = datetime.datetime.now()
             # К сожалению запрос пришлось замедлить, иначе при ассинхронных запросах иногда возникают ошибки
             vacancies_for_bd = await get_vacancies_for_bd(result, vacancies, params, now, request_uuid)
+            progress.set_progress(60)
             await VacancyRepository.vacancies_add(vacancies_for_bd)
+            progress.set_progress(70)
             end = datetime.datetime.now() - start
+
             print(end)
+        progress.set_progress(100)
+        print('progress in back ', progress)
         return templates.TemplateResponse('vacancies.html', context={
             'request': request,
             'vacancies': vacancies,
@@ -133,7 +149,8 @@ async def get_vacancies(request: Request, area: str = '', roles: str = '', text:
             'request_uuid': request_uuid,
         })
     except Exception as e:
-        send_tg(e)
+
+        send_tg(traceback.format_exc())
         logger.info(f'При запросе на получение вакансий возникла ошибка {e}')
         return RedirectResponse('/vacancies/', status_code=status.HTTP_302_FOUND)
 
