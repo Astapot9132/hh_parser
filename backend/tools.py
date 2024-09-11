@@ -54,6 +54,7 @@ async def get_vacancies_for_bd(first_request, first_vacancies, first_params, now
             tasks[p] = asyncio.create_task(client.get(url, params=new_params))
             # необходимо засыпать иначе будут отваливаться некоторые запросы
             await asyncio.sleep(0.1)
+        ProgressForUpload.set_progress(40)
         for p in range(1, first_request.json()['pages']):
             try:
                 a = await tasks[p]
@@ -61,6 +62,7 @@ async def get_vacancies_for_bd(first_request, first_vacancies, first_params, now
             except Exception as e:
                 send_tg(e)
                 logger.info(f'Возникла ошибка запроса вакансий: {e}')
+        ProgressForUpload.set_progress(50)
         for v in result_vacancies:
             try:
                 if v.get('salary'):
@@ -82,6 +84,6 @@ async def get_vacancies_for_bd(first_request, first_vacancies, first_params, now
                                          })
             except Exception as e:
                 send_tg(traceback.format_exc)
-    print(len(vacancies_for_bd))
+        ProgressForUpload.set_progress(75)
     return vacancies_for_bd
 

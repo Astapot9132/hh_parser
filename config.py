@@ -61,16 +61,26 @@ def send_tg(message):
 
 
 class ProgressForUpload:
-    def __init__(self):
-        self.progress = 0
+    progress = 0
 
-    def get_progress(self):
-        return self.progress
+    """
+     Класс для прогресс-бара при загрузке вакансий,
+     Интересно, что если делать экземпляр этого класса то по личным мотивам после 1 запуска экземпляр
+     принимает значение 0 и не меняет его вообще, тоже самое происходит при определении бара через глобалку
+     
+     Хотя судя по тестам и этот прогрессбар подтупливает..
+     """
+    @classmethod
+    def get_progress(cls):
+        return cls.progress
 
-    def set_progress(self, value):
+    @classmethod
+    def set_progress(cls, value):
         if value:
-            self.progress = value
+            cls.progress = value
         return value
 
-    def reset_progress(self):
-        self.progress = 0
+    @classmethod
+    def reset_progress(cls):
+        cls.progress = 0
+

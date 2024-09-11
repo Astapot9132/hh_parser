@@ -29,7 +29,7 @@
         <input class="form-control me-2" type="search" name="text" id="text" placeholder="Введите текст" aria-label="Search"/>
         <input class="form-control me-2" type="search" name="area" id="area" placeholder="Введите город" aria-label="Search"/>
         <input class="form-control me-2" type="search" name="roles" id="roles" placeholder="Введите специальность" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit" style="width: 100%" hx-post="/start" hx-swap="none">Получить список вакансий</button>
+          <button id="GetButton" class="btn btn-outline-success" type="submit" style="width: 100%" hx-post="/start" hx-swap="none">Получить список вакансий</button>
     </form>
 </div>
 <div class="d-flex justify-content-center bd-highlight mb-2" style="width: 100%">
@@ -37,11 +37,12 @@
 </div>
 
 <script>
-        $('.btn-outline-success').on('click', function(){
-            console.log('test');
-        });
+
+    document.getElementById('GetButton').addEventListener('click', function() {
+    setInterval(updateProgress, 250);
+});
         async function updateProgress() {
-        console.log("Начали")
+        console.log("Начали");
         const response = await fetch(
         '/vacancies/progress'
         );
@@ -51,9 +52,6 @@
         console.log("progress " + progress);
         }
 
-
-        updateProgress();
-        setInterval(updateProgress, 500);
 </script>
 
 

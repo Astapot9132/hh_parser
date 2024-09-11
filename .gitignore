@@ -2,3 +2,4 @@
 env
 __pycache__
 credentials.json
+hh_parser_log.txt
